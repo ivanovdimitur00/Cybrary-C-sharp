@@ -1,0 +1,92 @@
+﻿@page "/Books/{author?}"
+@model Cybrary.Pages.Books.IndexModel
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Books";
+    var isAdmin = SignInManager.IsSignedIn(User) && User.Identity.Name == "admin@mail.com";
+
+}
+
+
+<div class="jumbotron p-3">
+    <div class="d-flex align-items-center">
+        <h1 class="display-4 flex-grow-1">
+            Available Books
+        </h1>
+        @if (isAdmin)
+        {
+            <a class="btn btn-primary btn-lg" asp-page="./Edit">
+                Create
+            </a>
+        }
+    </div>
+</div>
+
+<div class="d-flex bg-success text-white">
+    <div class="p-2" style="flex:0 0 10%">
+        Author
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Title
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Publisher
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Year
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        ISBN
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Resume
+    </div>
+    <div class="p-2" style="flex:0 0 25%">
+        Price
+    </div>
+</div>
+
+@foreach (var item in Model.Books)
+{
+    <div class="d-flex border-left border-right border-bottom border-primary">
+        <div class="p-2" style="flex:0 0 10%">
+            @item.Author
+        </div>
+        <div class="p-2" style="flex:0 0 15%">
+            @item.Title
+        </div>
+        <div class="p-2" style="flex:1 0 10%">
+            @item.Publisher
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            @item.Year.ToString("yyyy-MM-dd")
+        </div>
+        <div class="p-2" style="flex:1 0 10%">
+            @item.ISBN
+        </div>
+        <div class="p-2" style="flex:1 0 10%">
+            @item.Resume
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            @item.Price$
+        </div>
+        @if (isAdmin)
+        {
+            <form method="post" asp-page-handler="OnPost" asp-route-id="@item.Id" class="p-2 btn-group" style="flex:0 0 25%" role="group">
+                <a class="btn btn-primary btn-sm d-flex align-items-center justify-content-center" asp-page="./Edit" asp-route-id="@item.Id">
+                    Edit
+                </a>
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+            </form>
+        }
+        else
+        {
+            <div class="p-2" style="flex:0 0 25%">
+                <a class="btn btn-primary btn-sm" asp-page="/Books/Contact">
+                    Contact Us
+                </a>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron jumbotron text-white" style="background-image: url(https://img.freepik.com/premium-photo/modern-big-library-design-black-wooden-library-with-wooden-parquet-realistic-3d-rendering_626958-37.jpg); background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;">
+    <div class="container">
+        <h2 class="text-center display-3 mb-4">Welcome to Cybrary!</h1>
+    </div>
+</div>
+<h1 class="display-5">Pick your next book!</h1>
+
+<form class="form-inline">
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Available Authors: </label>
+
+    <select class="custom-select my-1 mr-sm-2"
+            asp-for="Author" asp-items="Model.Authors">
+    </select>
+
+    <button type="submit" class="btn btn-primary btn-sm my-1" asp-page="/Books/Index">Check Out Books</button>
+</form>

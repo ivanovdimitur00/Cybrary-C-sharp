@@ -1,0 +1,50 @@
+﻿@page "{id?}"
+@model EditModel
+@{
+    ViewData["Title"] = "Book Edit";
+}
+
+<div class="jumbotron p-3">
+    <div class="d-flex align-items-center">
+        <h1 class="display-4 flex-grow-1">
+            Books Edit
+        </h1>
+        <a class="btn btn-primary btn-sm" asp-page="./Index">
+            Back to List
+        </a>
+    </div>
+</div>
+
+<form method="post">
+    <div class="form-group d-flex">
+        <label asp-for="Book.Title" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Title" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.Author" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Author" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.Publisher" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Publisher" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.Year" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Year" class="form-control" style="flex:1 0 auto;width:auto" type="date" value="@Model.Book.Year.ToString("yyyy-MM-dd")" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.ISBN" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.ISBN" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.Resume" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Resume" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Book.Price" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <input asp-for="Book.Price" class="form-control" style="flex:1 0 auto;width:auto" />
+    </div>
+    <div class="form-group d-flex flex-row-reverse">
+        <input type="submit" value="Save" class="btn btn-primary btn-sm" />
+    </div>
+</form>
