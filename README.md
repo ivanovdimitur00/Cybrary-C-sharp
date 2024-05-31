@@ -45,7 +45,12 @@ The intended audiences for the project are the teacher in my .NET programming cl
 
 ## Structutre
 Here are some of the important directories and files you need to know about this project:
-* `` - ;
+* `Program.cs` and `Startup.cs` - program files for configuring the project upon startup;
+* `wwwroot` - contains some files for the frontend;
+* `Properties/launchSettings.json` - network config file;
+* `Pages` - folder, containing the frontend web page files;
+* `Models` - folder, containing the book entity file;
+* `Data` - folder, containing the database migrations and `ApplicationDBContext.cs` file.
 <br/>
 
 ## Installation instructions
@@ -64,7 +69,14 @@ This is a list of dependencies that you need if you want to run the project loca
 * Microsoft SQL Server 2022;
 * Microsoft .NET framework 6.X;
 * NuGet packages:
-  * 
+  * "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.13";
+  * "Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13";
+  * "Microsoft.AspNetCore.Identity.UI" Version="6.0.13";
+  * "Microsoft.EntityFrameworkCore" Version="7.0.5";
+  * "Microsoft.EntityFrameworkCore.Design" Version="7.0.5";
+  * "Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5";
+  * "Microsoft.EntityFrameworkCore.Tools" Version="6.0.16";
+  * "Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13".
 <br/>
 
 ## System requirements
