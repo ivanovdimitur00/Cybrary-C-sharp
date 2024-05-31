@@ -1,5 +1,5 @@
 # Cybrary (C#)
-Description of project.
+Simple web app for posting and searching e-books using C#, .NET framework and the MVC architecture.
 <br/>
 <br/>
 
@@ -18,59 +18,84 @@ Description of project.
 <br/>
 
 ## Project status
-Describe project status.
+Completed and working. Not expecting changes.
 <br/>
 <br/>
 
 ## Description
-Describe the purpose / goal of the project.
+The purpose and goal of the project is to create an MVC project using C# and .NET .
 
-Describe the intended audiences.
-
-Short, brief description.
+The intended audiences for the project are the teacher in my .NET programming class and myself.
 <br/>
 <br/>
 
 ## Key features and functionalities
-* Key feature 1;
-* Function 1; <br/>
-you can also section it with sentences - explanations.
+* ### KEY FEATURES
+  * Users can browse books without an account but can't post books;
+  * Users can register an account;
+  * Users can login with a registered account;
+  * Logged users can upload books;
+  * Users can search books using the search bar and also apply filters.
+ 
+* ### FUNCTIONALITIES
+  * Login and register system, provided by microsoft;
+  * SQL Database model;
+  * Search and Filtering.
 <br/>
 
 ## Structutre
-* Describe how the project files are arranged and what they mean;
-  * Use bullet points and short sentences;
+Here are some of the important directories and files you need to know about this project:
+* `` - ;
 <br/>
 
 ## Installation instructions
-1. How to access and/or setup the project;
-2. Use a numbered list;
+Usually, the project is supposed to be hosted on a server and given a domain. However, I don't have a HomeLab or am I able to rent a server or a domain. Instead:
+1. Download this project;
+2. Open the Project in Visual Studio 2022;
+3. Open Miscrosoft SQL Server 2022;
+4. Ensure you have all the needed dependencies;
+5. Ensure you are connecting to your local database;
+6. Build the project. You should have access now.
 <br/>
 
 ## Dependencies
-* Dependency 1;
-* Dependency 2;
+This is a list of dependencies that you need if you want to run the project locally. Aside from **an internet connection**, you will need:
+* Visual Studio 2022;
+* Microsoft SQL Server 2022;
+* Microsoft .NET framework 6.X;
+* NuGet packages:
+  * 
 <br/>
 
 ## System requirements
-| System requirements |
-| ------------------- | 
-| requirement 1       | 
-| requirement 2       | 
+The project has been developed for the Miscrosoft Windows operating system.
+| System requirements  |
+| -------------------- | 
+| Microsoft Windows 10 | 
 <br/>
 
 ## Usage examples
-1. Make a tutorial on how the project can be used;
-2. Use numbered lists;
-<br>
+We assume that the project has been accessed on the internet or has been run on a local instance. 
+<br/>
+
+1. For unregistered users:
+  * They can look at books and search for them, but not edit;
+  * They can register and/or login.
+2. For logged-in users:
+  * They can create their own books;
+  * They can search for books.
+3. For Administrators:
+<br/>
 
 ## API references
-* If the project is used as a standalone library, describe the functions that can be called;
+Nothing to mention here.
+<br/>
 <br/>
 
 ## Bugs
-- [ ] describe any occuring bugs that need to be fixed;
+- [x] No bugs have been caught.
 <br/>
 
 ## Future improvements
-- [ ] describe some ideas you would want to implement into your project;
+- [ ] Pick a domain for the website and a hosting solution;
+- [ ] Implement a simple frontend.
